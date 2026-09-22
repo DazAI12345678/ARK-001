@@ -94,6 +94,37 @@ const backWall = new THREE.Mesh(
 backWall.position.set(0, 3, -8);
 
 scene.add(backWall);
+    // Biome zone
+const biomeGeometry = new THREE.BoxGeometry(14, 0.2, 12);
+
+const biomeMaterial = new THREE.MeshStandardMaterial({
+  color: 0x526b45
+});
+
+const biomeFloor = new THREE.Mesh(
+  biomeGeometry,
+  biomeMaterial
+);
+
+biomeFloor.position.set(0, -0.85, -1);
+
+scene.add(biomeFloor);
+
+// Biome boundary
+const boundaryGeometry = new THREE.BoxGeometry(14, 3, 0.2);
+
+const boundaryMaterial = new THREE.MeshStandardMaterial({
+  color: 0x26362d
+});
+
+const boundary = new THREE.Mesh(
+  boundaryGeometry,
+  boundaryMaterial
+);
+
+boundary.position.set(0, 0.5, -7);
+
+scene.add(boundary);
 
 // Ark ceiling lights
 const ceilingLight = new THREE.PointLight(
