@@ -125,7 +125,57 @@ const boundary = new THREE.Mesh(
 boundary.position.set(0, 0.5, -7);
 
 scene.add(boundary);
+// Tree helper
+function createTree(x, z, scale = 1) {
+  const trunkGeometry = new THREE.CylinderGeometry(
+    0.25 * scale,
+    0.35 * scale,
+    2 * scale,
+    6
+  );
 
+  const trunkMaterial = new THREE.MeshStandardMaterial({
+    color: 0x5a3d28
+  });
+
+  const trunk = new THREE.Mesh(
+    trunkGeometry,
+    trunkMaterial
+  );
+
+  trunk.position.set(x, 0.2 * scale, z);
+  scene.add(trunk);
+
+  const leavesGeometry = new THREE.ConeGeometry(
+    1.2 * scale,
+    2.5 * scale,
+    7
+  );
+
+  const leavesMaterial = new THREE.MeshStandardMaterial({
+    color: 0x355c3a
+  });
+
+  const leaves = new THREE.Mesh(
+    leavesGeometry,
+    leavesMaterial
+  );
+
+  leaves.position.set(
+    x,
+    2.2 * scale,
+    z
+  );
+
+  scene.add(leaves);
+}
+
+// First biome trees
+createTree(-5, -2, 1.2);
+createTree(-2.5, -4, 0.9);
+createTree(3, -3, 1.1);
+createTree(5, -1, 0.8);
+createTree(-4, 1, 0.7);
 // Ark ceiling lights
 const ceilingLight = new THREE.PointLight(
   0xb8d8ff,
