@@ -79,6 +79,32 @@ ground.rotation.x = -Math.PI / 2;
 ground.position.y = -1;
 
 scene.add(ground);
+    // Ark wall
+const wallGeometry = new THREE.BoxGeometry(30, 8, 0.5);
+
+const wallMaterial = new THREE.MeshStandardMaterial({
+  color: 0x18252b
+});
+
+const backWall = new THREE.Mesh(
+  wallGeometry,
+  wallMaterial
+);
+
+backWall.position.set(0, 3, -8);
+
+scene.add(backWall);
+
+// Ark ceiling lights
+const ceilingLight = new THREE.PointLight(
+  0xb8d8ff,
+  5,
+  25
+);
+
+ceilingLight.position.set(0, 6, 0);
+
+scene.add(ceilingLight);
   const light = new THREE.HemisphereLight(
     0xffffff,
     0x223344,
