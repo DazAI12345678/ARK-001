@@ -54,7 +54,15 @@
   document.getElementById("game").appendChild(renderer.domElement);
 
   camera.position.set(0, 2, 6);
+const geometry = new THREE.BoxGeometry(2, 2, 2);
 
+const material = new THREE.MeshStandardMaterial({
+  color: 0x668866
+});
+
+const cube = new THREE.Mesh(geometry, material);
+
+scene.add(cube);
   const light = new THREE.HemisphereLight(
     0xffffff,
     0x223344,
