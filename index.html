@@ -26,13 +26,56 @@
       height: 100vh;
       position: relative;
     }
+    #objectives {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  padding: 14px 18px;
+  background: rgba(5, 12, 16, 0.78);
+  border: 1px solid rgba(180, 220, 230, 0.35);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  line-height: 1.8;
+  pointer-events: none;
+}
+
+.objective-title {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+  opacity: 0.7;
+}
+
+.objective span {
+  margin-right: 6px;
+}
   </style>
 </head>
 
 <body>
 
   <div id="game"></div>
+<div id="objectives">
+  <div class="objective-title">BIOME OBJECTIVES</div>
 
+  <div class="objective">
+    <span>□</span> Restore forest
+  </div>
+
+  <div class="objective">
+    <span>□</span> Clean the beach
+  </div>
+
+  <div class="objective">
+    <span>□</span> Check water level
+  </div>
+
+  <div class="objective">
+    <span>□</span> Investigate the ocean
+  </div>
+</div>
   <script>
     <script>
   const scene = new THREE.Scene();
