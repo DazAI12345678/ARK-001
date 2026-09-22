@@ -109,7 +109,39 @@ const biomeFloor = new THREE.Mesh(
 biomeFloor.position.set(0, -0.85, -1);
 
 scene.add(biomeFloor);
+// Ocean section
+const oceanGeometry = new THREE.BoxGeometry(10, 0.15, 5);
 
+const oceanMaterial = new THREE.MeshStandardMaterial({
+  color: 0x24566b,
+  transparent: true,
+  opacity: 0.85
+});
+
+const ocean = new THREE.Mesh(
+  oceanGeometry,
+  oceanMaterial
+);
+
+ocean.position.set(2, -0.72, -4.5);
+
+scene.add(ocean);
+
+// Beach section
+const beachGeometry = new THREE.BoxGeometry(10, 0.16, 4);
+
+const beachMaterial = new THREE.MeshStandardMaterial({
+  color: 0x9b8660
+});
+
+const beach = new THREE.Mesh(
+  beachGeometry,
+  beachMaterial
+);
+
+beach.position.set(2, -0.70, 0);
+
+scene.add(beach);
 // Biome boundary
 const boundaryGeometry = new THREE.BoxGeometry(14, 3, 0.2);
 
