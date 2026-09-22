@@ -63,6 +63,7 @@ const material = new THREE.MeshStandardMaterial({
 const cube = new THREE.Mesh(geometry, material);
 
 scene.add(cube);
+    cube.position.y = 0;
     const groundGeometry = new THREE.PlaneGeometry(30, 30);
 
 const groundMaterial = new THREE.MeshStandardMaterial({
@@ -87,8 +88,11 @@ scene.add(ground);
   scene.add(light);
 
   function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+
+  cube.rotation.y += 0.005;
+
+  renderer.render(scene, camera);
   }
 
   animate();
