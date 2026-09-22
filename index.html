@@ -142,6 +142,44 @@ const beach = new THREE.Mesh(
 beach.position.set(2, -0.70, 0);
 
 scene.add(beach);
+    // Dock
+const dockGeometry = new THREE.BoxGeometry(3, 0.35, 6);
+
+const dockMaterial = new THREE.MeshStandardMaterial({
+  color: 0x62452f
+});
+
+const dock = new THREE.Mesh(
+  dockGeometry,
+  dockMaterial
+);
+
+dock.position.set(5, -0.35, -3);
+
+scene.add(dock);
+
+// Dock posts
+function createDockPost(x, z) {
+  const postGeometry = new THREE.BoxGeometry(0.3, 2.5, 0.3);
+
+  const postMaterial = new THREE.MeshStandardMaterial({
+    color: 0x3f2c20
+  });
+
+  const post = new THREE.Mesh(
+    postGeometry,
+    postMaterial
+  );
+
+  post.position.set(x, -0.9, z);
+
+  scene.add(post);
+}
+
+createDockPost(4, -1);
+createDockPost(6, -1);
+createDockPost(4, -5);
+createDockPost(6, -5);
 // Biome boundary
 const boundaryGeometry = new THREE.BoxGeometry(14, 3, 0.2);
 
