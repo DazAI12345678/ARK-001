@@ -63,6 +63,21 @@ const material = new THREE.MeshStandardMaterial({
 const cube = new THREE.Mesh(geometry, material);
 
 scene.add(cube);
+    const groundGeometry = new THREE.PlaneGeometry(30, 30);
+
+const groundMaterial = new THREE.MeshStandardMaterial({
+  color: 0x34483a
+});
+
+const ground = new THREE.Mesh(
+  groundGeometry,
+  groundMaterial
+);
+
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -1;
+
+scene.add(ground);
   const light = new THREE.HemisphereLight(
     0xffffff,
     0x223344,
